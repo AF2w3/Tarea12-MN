@@ -109,14 +109,7 @@ def ODE_euler_nth(
 import numpy as np
 
 def interpolacion_lineal(y_1, y_2, x_val):
-    """
-    Realiza la interpolación lineal para un valor x_val dado los puntos (x, y).
-
-    :param x: Lista o array de valores x conocidos.
-    :param y: Lista o array de valores y conocidos.
-    :param x_val: El valor x para el cual se desea interpolar el valor y.
-    :return: El valor interpolado y correspondiente a x_val.
-    """
+ 
     # Convertir listas a arrays numpy
     y_1 = np.array(y_1)
     y_2 = np.array(y_2)
@@ -124,10 +117,10 @@ def interpolacion_lineal(y_1, y_2, x_val):
     # Usar la función interp1d de scipy para la interpolación lineal
     from scipy.interpolate import interp1d
 
-    # Crear la función de interpolación
+    # Creamos la función de interpolación
     f = interp1d(y_1, y_2, kind='linear', fill_value='extrapolate')
 
-    # Obtener el valor interpolado
+    # Obtenemos el valor interpolado
     y_val = f(x_val)
 
     return y_val
